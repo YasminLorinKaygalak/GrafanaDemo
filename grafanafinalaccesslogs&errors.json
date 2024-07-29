@@ -31,7 +31,7 @@
         "type": "loki",
         "uid": "P8E80F9AEF21F6940"
       },
-      "description": "Total  Count of log lines in the specified time range",
+      "description": "Total Count of log lines in the specified time range",
       "fieldConfig": {
         "defaults": {
           "color": {
