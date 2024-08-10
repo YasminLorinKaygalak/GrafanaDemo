@@ -1,0 +1,71 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: pong
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: pong
+  namespace: pong
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pong
+  namespace: pong
+spec:
+  selector:
+    matchLabels:
+      app: pong
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: pong
+      annotations:
+        consul.hashicorp.com/connect-inject: "true"
+    spec:
+      serviceAccountName: pong
+      containers:
+        - name: pong
+          image: melisaghashicorp/pingpong:test-8
+          #          image: rboyer/pingpong
+          ports:
+            - containerPort: 8080
+          args:
+            - -bind
+            - ":8080"
+            - -dial
+            - "ping.ping:8080"
+            - -name
+            - ping
+            - -pong-chaos
+            - -dialfreq
+            - 5s
+          securityContext:
+            capabilities:
+              add:
+                - NET_BIND_SERVICE
+              drop:
+                - ALL
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: pong
+  namespace: pong
+spec:
+  type: ClusterIP
+  selector:
+    app: pong
+  ports:
+    - port: 8080
+---
+apiVersion: consul.hashicorp.com/v1alpha1
+kind: ServiceDefaults
+metadata:
+  name: pong
+  namespace: pong
+spec:
+  protocol: http
