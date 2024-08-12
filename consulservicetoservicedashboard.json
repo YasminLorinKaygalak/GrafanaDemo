@@ -22,7 +22,7 @@
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
   "id": 12,
-  "iteration": 1723471071562,
+  "iteration": 1723475024460,
   "links": [],
   "liveNow": false,
   "panels": [
@@ -100,7 +100,7 @@
         "x": 0,
         "y": 1
       },
-      "id": 34,
+      "id": 28,
       "options": {
         "legend": {
           "calcs": [],
@@ -119,13 +119,13 @@
             "uid": "PBFA97CFB590B2093"
           },
           "exemplar": true,
-          "expr": "envoy_tcp_original_destination_max_downstream_connection_duration{}",
+          "expr": "envoy_tcp_downstream_cx_total{}",
           "interval": "",
           "legendFormat": "",
           "refId": "A"
         }
       ],
-      "title": "TCP Original Destination Connection Duration",
+      "title": "TCP Downstream Connections",
       "type": "timeseries"
     },
     {
@@ -218,190 +218,12 @@
       "type": "timeseries"
     },
     {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "PBFA97CFB590B2093"
-      },
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "palette-classic"
-          },
-          "custom": {
-            "axisLabel": "",
-            "axisPlacement": "auto",
-            "barAlignment": 0,
-            "drawStyle": "line",
-            "fillOpacity": 0,
-            "gradientMode": "none",
-            "hideFrom": {
-              "legend": false,
-              "tooltip": false,
-              "viz": false
-            },
-            "lineInterpolation": "linear",
-            "lineWidth": 1,
-            "pointSize": 5,
-            "scaleDistribution": {
-              "type": "linear"
-            },
-            "showPoints": "auto",
-            "spanNulls": false,
-            "stacking": {
-              "group": "A",
-              "mode": "none"
-            },
-            "thresholdsStyle": {
-              "mode": "off"
-            }
-          },
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "red",
-                "value": 80
-              }
-            ]
-          }
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 8,
-        "w": 12,
-        "x": 0,
-        "y": 9
-      },
-      "id": 30,
-      "options": {
-        "legend": {
-          "calcs": [],
-          "displayMode": "list",
-          "placement": "bottom"
-        },
-        "tooltip": {
-          "mode": "single",
-          "sort": "none"
-        }
-      },
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
-          },
-          "exemplar": true,
-          "expr": "envoy_tcp_max_downstream_connection_duration{}",
-          "interval": "",
-          "legendFormat": "",
-          "refId": "A"
-        }
-      ],
-      "title": "TCP Downstream Connection Duration",
-      "type": "timeseries"
-    },
-    {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "PBFA97CFB590B2093"
-      },
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "palette-classic"
-          },
-          "custom": {
-            "axisLabel": "",
-            "axisPlacement": "auto",
-            "barAlignment": 0,
-            "drawStyle": "line",
-            "fillOpacity": 0,
-            "gradientMode": "none",
-            "hideFrom": {
-              "legend": false,
-              "tooltip": false,
-              "viz": false
-            },
-            "lineInterpolation": "linear",
-            "lineWidth": 1,
-            "pointSize": 5,
-            "scaleDistribution": {
-              "type": "linear"
-            },
-            "showPoints": "auto",
-            "spanNulls": false,
-            "stacking": {
-              "group": "A",
-              "mode": "none"
-            },
-            "thresholdsStyle": {
-              "mode": "off"
-            }
-          },
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "red",
-                "value": 80
-              }
-            ]
-          }
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 8,
-        "w": 12,
-        "x": 12,
-        "y": 9
-      },
-      "id": 28,
-      "options": {
-        "legend": {
-          "calcs": [],
-          "displayMode": "list",
-          "placement": "bottom"
-        },
-        "tooltip": {
-          "mode": "single",
-          "sort": "none"
-        }
-      },
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
-          },
-          "exemplar": true,
-          "expr": "envoy_tcp_downstream_cx_total{}",
-          "interval": "",
-          "legendFormat": "",
-          "refId": "A"
-        }
-      ],
-      "title": "TCP Downstream Connections",
-      "type": "timeseries"
-    },
-    {
       "collapsed": true,
       "gridPos": {
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 17
+        "y": 9
       },
       "id": 16,
       "panels": [],
@@ -467,7 +289,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 18
+        "y": 10
       },
       "id": 18,
       "options": {
@@ -557,7 +379,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 18
+        "y": 10
       },
       "id": 20,
       "options": {
@@ -646,7 +468,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 26
+        "y": 18
       },
       "id": 22,
       "options": {
@@ -660,6 +482,7 @@
           "sort": "none"
         }
       },
+      "pluginVersion": "8.4.2",
       "targets": [
         {
           "datasource": {
@@ -667,9 +490,9 @@
             "uid": "PBFA97CFB590B2093"
           },
           "exemplar": true,
-          "expr": "histogram_quantile(0.95, sum(rate(envoy_cluster_upstream_rq_time_bucket{local_cluster=\"dc1\",consul_target!=\"\"}[10m])) ",
+          "expr": "histogram_quantile(0.95, sum(rate(envoy_cluster_upstream_rq_time_bucket{local_cluster=~\"$service\",consul_destination_target!=\"\"}[10m])) by (le, consul_destination_target))",
           "interval": "",
-          "legendFormat": "",
+          "legendFormat": "{{consul_destination_target}}",
           "refId": "A"
         }
       ],
@@ -735,7 +558,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 26
+        "y": 18
       },
       "id": 24,
       "options": {
@@ -756,7 +579,7 @@
             "uid": "PBFA97CFB590B2093"
           },
           "exemplar": true,
-          "expr": "group(last_over_time(envoy_control_plane_connected_state{cluster=\"$cluster\"}[10m] ) == 0) ",
+          "expr": "group(last_over_time(envoy_control_plane_connected_state{app=~\"$service\"}[10m] ) == 0) ",
           "interval": "",
           "legendFormat": "",
           "refId": "A"
@@ -771,7 +594,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 34
+        "y": 26
       },
       "id": 14,
       "panels": [],
@@ -837,7 +660,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 35
+        "y": 27
       },
       "id": 12,
       "options": {
@@ -926,7 +749,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 35
+        "y": 27
       },
       "id": 4,
       "options": {
@@ -1015,7 +838,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 43
+        "y": 35
       },
       "id": 2,
       "options": {
@@ -1104,7 +927,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 43
+        "y": 35
       },
       "id": 6,
       "options": {
@@ -1193,14 +1016,14 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 51
+        "y": 43
       },
       "id": 10,
       "options": {
         "legend": {
           "calcs": [],
           "displayMode": "list",
-          "placement": "bottom"
+          "placement": "right"
         },
         "tooltip": {
           "mode": "single",
@@ -1214,7 +1037,7 @@
             "uid": "PBFA97CFB590B2093"
           },
           "exemplar": true,
-          "expr": "sum(increase(envoy_http_downstream_rq_total{local_cluster=~\"$service\",envoy_http_conn_manager_prefix=\"public_listener\"}[10m]))",
+          "expr": "sum(increase(envoy_http_downstream_rq_total{local_cluster=~\"$service\",envoy_http_conn_manager_prefix=\"public_listener\"}[10m])) by (local_cluster)",
           "interval": "",
           "legendFormat": "",
           "refId": "A"
@@ -1231,35 +1054,7 @@
       "fieldConfig": {
         "defaults": {
           "color": {
-            "mode": "palette-classic"
-          },
-          "custom": {
-            "axisLabel": "",
-            "axisPlacement": "auto",
-            "barAlignment": 0,
-            "drawStyle": "line",
-            "fillOpacity": 0,
-            "gradientMode": "none",
-            "hideFrom": {
-              "legend": false,
-              "tooltip": false,
-              "viz": false
-            },
-            "lineInterpolation": "linear",
-            "lineWidth": 1,
-            "pointSize": 5,
-            "scaleDistribution": {
-              "type": "linear"
-            },
-            "showPoints": "auto",
-            "spanNulls": false,
-            "stacking": {
-              "group": "A",
-              "mode": "none"
-            },
-            "thresholdsStyle": {
-              "mode": "off"
-            }
+            "mode": "thresholds"
           },
           "mappings": [],
           "thresholds": {
@@ -1274,7 +1069,8 @@
                 "value": 80
               }
             ]
-          }
+          },
+          "unit": "percentunit"
         },
         "overrides": []
       },
@@ -1282,20 +1078,24 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 51
+        "y": 43
       },
       "id": 8,
       "options": {
-        "legend": {
-          "calcs": [],
-          "displayMode": "list",
-          "placement": "bottom"
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
         },
-        "tooltip": {
-          "mode": "single",
-          "sort": "none"
-        }
+        "textMode": "auto"
       },
+      "pluginVersion": "8.4.2",
       "targets": [
         {
           "datasource": {
@@ -1303,14 +1103,14 @@
             "uid": "PBFA97CFB590B2093"
           },
           "exemplar": true,
-          "expr": "sum(irate(envoy_http_downstream_rq_total{local_cluster=~\"$service\",envoy_http_conn_manager_prefix=\"public_listener\"}[10m]))",
+          "expr": "sum(irate(envoy_http_downstream_rq_total{local_cluster=~\"$service\",envoy_http_conn_manager_prefix=\"public_listener\"}[10m])) by (local_cluster)",
           "interval": "",
           "legendFormat": "",
           "refId": "A"
         }
       ],
       "title": "Request Response Rate",
-      "type": "timeseries"
+      "type": "stat"
     }
   ],
   "refresh": "",
@@ -1338,7 +1138,7 @@
       },
       {
         "current": {
-          "selected": false,
+          "selected": true,
           "text": "All",
           "value": "$__all"
         },
@@ -1391,7 +1191,7 @@
       },
       {
         "current": {
-          "selected": false,
+          "selected": true,
           "text": "default",
           "value": "default"
         },
@@ -1430,9 +1230,13 @@
       },
       {
         "current": {
-          "selected": false,
-          "text": "All",
-          "value": "$__all"
+          "selected": true,
+          "text": [
+            "pong"
+          ],
+          "value": [
+            "pong"
+          ]
         },
         "datasource": {
           "type": "prometheus",
@@ -1464,6 +1268,6 @@
   "timezone": "",
   "title": "Consul Service_To_Service Dashboard",
   "uid": "qTEWJ0XSkm",
-  "version": 25,
+  "version": 35,
   "weekStart": ""
 }
