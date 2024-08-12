@@ -22,7 +22,7 @@
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
   "id": 12,
-  "iteration": 1723475024460,
+  "iteration": 1723478737845,
   "links": [],
   "liveNow": false,
   "panels": [
@@ -1138,7 +1138,7 @@
       },
       {
         "current": {
-          "selected": true,
+          "selected": false,
           "text": "All",
           "value": "$__all"
         },
@@ -1191,7 +1191,7 @@
       },
       {
         "current": {
-          "selected": true,
+          "selected": false,
           "text": "default",
           "value": "default"
         },
@@ -1230,13 +1230,9 @@
       },
       {
         "current": {
-          "selected": true,
-          "text": [
-            "pong"
-          ],
-          "value": [
-            "pong"
-          ]
+          "selected": false,
+          "text": "All",
+          "value": "$__all"
         },
         "datasource": {
           "type": "prometheus",
@@ -1268,6 +1264,6 @@
   "timezone": "",
   "title": "Consul Service_To_Service Dashboard",
   "uid": "qTEWJ0XSkm",
-  "version": 35,
+  "version": 36,
   "weekStart": ""
 }

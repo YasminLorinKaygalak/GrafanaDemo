@@ -24,7 +24,7 @@
   "gnetId": 11021,
   "graphTooltip": 0,
   "id": 11,
-  "iteration": 1723475002584,
+  "iteration": 1723478872699,
   "links": [],
   "liveNow": false,
   "panels": [
@@ -1265,8 +1265,8 @@
     ]
   },
   "timezone": "",
-  "title": "Consul Service Dashboardd",
+  "title": "Consul Service Dashboard",
   "uid": "hashicupsnm",
-  "version": 28,
+  "version": 29,
   "weekStart": ""
 }

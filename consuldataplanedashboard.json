@@ -24,7 +24,7 @@
   "gnetId": 11021,
   "graphTooltip": 0,
   "id": 6,
-  "iteration": 1723473526816,
+  "iteration": 1723478909789,
   "links": [],
   "liveNow": false,
   "panels": [
@@ -1311,7 +1311,7 @@
       },
       {
         "current": {
-          "selected": true,
+          "selected": false,
           "text": "All",
           "value": "$__all"
         },
@@ -1445,6 +1445,6 @@
   "timezone": "",
   "title": "Consul DataPlane Dashboard",
   "uid": "hashicupso",
-  "version": 32,
+  "version": 33,
   "weekStart": ""
 }
