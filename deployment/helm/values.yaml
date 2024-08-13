@@ -7,16 +7,11 @@ global:
 
 ui:
   enabled: true
-  # Defines the type of service created for the Consul UI (e.g. LoadBalancer, ClusterIP, NodePort).
-  # NodePort is primarily used for local deployments.
   service:
     type: NodePort
-  # Enables displaying metrics in the Consul UI.
   metrics:
     enabled: true
-    # The metrics provider specification.
     provider: "prometheus"
-    # The URL of the prometheus metrics server.
     baseURL: http://prometheus-server.default.svc.cluster.local
 
 connectInject:
@@ -24,8 +19,5 @@ connectInject:
   metrics:
     defaultEnabled: true
   apiGateway:
-    # Configuration settings for the GatewayClass
     managedGatewayClass:
-      # Defines the type of service created for gateways (e.g. LoadBalancer, ClusterIP, NodePort)
-      # NodePort is primarily used for local deployments.
       serviceType: LoadBalancer
