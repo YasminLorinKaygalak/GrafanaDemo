@@ -5,10 +5,12 @@ This will deploy the following services:
 - frontend
 - backend
 - ping
+  - Ping and Pong talk to each other with `chaos-mode` enabled to simulate network failures. See [rboyer/pingpong](https://github.com/rboyer/pingpong/tree/main) for more information.
 - pong
 
-There is an api-gateway with a route to the frontend on port 80.
-Ping and Pong talk to each other with `chaos-mode` enabled to simulate network failures.
+This will deploy an API Gateway with the following routes:
+- frontend on port 80 
+- grafana on port 3000 to make it easier to access the dashboards without needing kube configs.
 
 It will also deploy Grafana, Loki, and Prometheus.
 
@@ -22,14 +24,3 @@ kubectl apply -f resources
 make create-config-maps
 make install-observability
 ```
-
-
-### 
-
-Port forward grafana to view the dashboards:
-
-```shell
-kubectl port-forward service/grafana 3000:3000
-```
-
-Visit localhost:3000

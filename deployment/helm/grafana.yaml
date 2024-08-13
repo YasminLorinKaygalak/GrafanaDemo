@@ -28,7 +28,7 @@ podLabels:
   app: grafana
 
 podAnnotations:
-  "consul.hashicorp.com/connect-inject": "false"
+  "consul.hashicorp.com/connect-inject": "true"
 
 service:
   port: 3000

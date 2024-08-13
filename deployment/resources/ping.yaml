@@ -29,8 +29,8 @@ spec:
       serviceAccountName: ping
       containers:
         - name: ping
-          image: melisaghashicorp/pingpong:test-8
-#          image: rboyer/pingpong
+#          image: melisaghashicorp/pingpong:test-8
+          image: rboyer/pingpong
           ports:
             - containerPort: 8080
           args:

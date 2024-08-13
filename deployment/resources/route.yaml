@@ -5,6 +5,7 @@ metadata:
 spec:
   parentRefs:
     - name: api-gateway
+      sectionName: http
   rules: 
     - backendRefs:
       - kind: Service
@@ -27,3 +28,18 @@ spec:
   - group: ""
     kind: Service
     name: frontend
+---
+apiVersion: gateway.networking.k8s.io/v1alpha2
+kind: TCPRoute
+metadata:
+  name: grafana-route-default
+spec:
+  parentRefs:
+    - name: api-gateway
+      sectionName: grafana
+  rules:
+    - backendRefs:
+        - kind: Service
+          name: grafana
+          namespace: default
+          port: 3000
