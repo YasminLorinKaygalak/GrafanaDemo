@@ -19,8 +19,8 @@ It will also deploy Grafana, Loki, and Prometheus.
 ### Install
 
 ```shell
-helm upgrade --install consul hashicorp/consul --values helm/values.yaml
-kubectl apply -f resources
+helm upgrade --install consul hashicorp/consul --values deployment/helm/values.yaml
+kubectl apply -f deployment/resources
 make create-config-maps
 make install-observability
 ```
