@@ -1,17 +1,21 @@
 .PHONY: create-config-maps
 create-config-maps:
 	echo "If this fails you probably need to delete and remake your configmaps. Run 'make delete-config-maps' and then 'make create-config-maps'"
-	kubectl create configmap consuldataplanedashboard --from-file=../consuldataplanedashboard.json
-	kubectl create configmap consulservicedashboard --from-file=../consulservicedashboard.json
-	kubectl create configmap consulservicetoservicedashboard --from-file=../consulservicetoservicedashboard.json
-	kubectl create configmap grafanafinalaccesslogsanderrors --from-file=../grafanafinalaccesslogsanderrors.json
+	kubectl create configmap consuldataplanedashboard --from-file=../dashboards/consuldataplanedashboard.json
+	kubectl create configmap consulservicedashboard --from-file=../dashboards/consulservicedashboard.json
+	kubectl create configmap consulservicetoservicedashboard --from-file=../dashboards/consulservicetoservicedashboard.json
+	kubectl create configmap consulaccesslogsanderrors --from-file=../dashboards/consulaccesslogsanderrors.json
+	kubectl create configmap consulk8smonitoring --from-file=../dashboards/consulk8smonitoring.json
+
 
 .PHONY: delete-config-maps
 delete-config-maps:
 	kubectl delete configmap consuldataplanedashboard
 	kubectl delete configmap consulservicedashboard
 	kubectl delete configmap consulservicetoservicedashboard
-	kubectl delete configmap grafanafinalaccesslogsanderrors
+	kubectl delete configmap consulaccesslogsanderrors 
+	kubectl delete configmap consulk8smonitoring
+
 
 .PHONY: install-observability
 install-observability: install-prometheus install-loki install-grafana

@@ -88,7 +88,7 @@ dashboardProviders:
       editable: true
       options:
         path: /var/lib/grafana/dashboards/consulservicetoservicedashboard
-    - name: 'grafanafinalaccesslogsanderrors'
+    - name: 'consulaccesslogsanderrors'
       orgId: 1
       allowUiUpdates: true
       folder: ''
@@ -96,10 +96,20 @@ dashboardProviders:
       disableDeletion: false
       editable: true
       options:
-        path: /var/lib/grafana/dashboards/grafanafinalaccesslogsanderrors
+        path: /var/lib/grafana/dashboards/consulaccesslogsanderrors
+    - name: 'consulk8smonitoring'
+      orgId: 1
+      allowUiUpdates: true
+      folder: ''
+      type: file
+      disableDeletion: false
+      editable: true
+      options:
+        path: /var/lib/grafana/dashboards/consulk8smonitoring
 
 dashboardsConfigMaps:
   consuldataplanedashboard: consuldataplanedashboard
   consulservicedashboard: consulservicedashboard
   consulservicetoservicedashboard: consulservicetoservicedashboard
-  grafanafinalaccesslogsanderrors: grafanafinalaccesslogsanderrors
+  consulaccesslogsanderrors: consulaccesslogsanderrors
+  consulk8smonitoring: consulk8smonitoring
